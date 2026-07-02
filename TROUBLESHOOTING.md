@@ -25,9 +25,32 @@ Check your API key:
 - Make sure there are no extra spaces around the key in .env.local
 
 ## Search returns no relevant clauses
-The keyword search could not match your query.
-- Try using exact terms: "liquidation", "anti-dilution", "drag-along", "board seat"
-- Or use one of the demo queries
+Retrieval is hybrid: semantic similarity (understands meaning, not just exact
+words) blended with a keyword-match boost. So this usually isn't a wording
+problem — plain-English questions like "can investors force me to sell the
+company?" should still match the right clause.
+
+If a query that should clearly match something is returning nothing:
+- Try one of the demo queries first to confirm retrieval is working at all
+- Check the most likely cause below ("A clause exists but never shows up in search")
+- As a last resort, try the exact legal term (e.g. "drag-along," "liquidation preference")
+
+## A clause exists but never shows up in search
+This almost always means the clause was added or edited in
+`lib/clauseDatabase.ts`, but its embedding was never (re)generated — so
+semantic search has no vector for it and can never surface it, no matter how
+the question is worded.
+
+Fix:
+```bash
+npx tsx scripts/generateEmbeddings.ts
+```
+This regenerates `lib/clauseEmbeddings.json` from the current state of
+`clauseDatabase.ts`. Commit the updated file — it's read at request time, not
+generated on Vercel.
+
+Rule of thumb: **any time you edit `clauseDatabase.ts`, rerun this script
+before testing or deploying.**
 
 ## Vercel deployment failed
 1. Run `npm run build` locally first — fix any errors it shows
