@@ -48,7 +48,7 @@ pages/
   api/playbook.ts        RAG engine (retrieval + GPT generation)
   _app.tsx               App wrapper
 lib/
-  clauseDatabase.ts       33 term sheet clause chunks
+  clauseDatabase.ts       34 term sheet clause chunks
   embeddingText.ts        Builds text representation of a clause for embedding
   clauseEmbeddings.json   Precomputed clause embeddings (committed)
   retrieval.ts            Semantic + keyword hybrid retrieval
