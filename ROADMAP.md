@@ -1,7 +1,7 @@
 # Product Roadmap
 
 ## Version 1.0 — Current MVP ✅
-- 33 term sheet clause chunks (Seed + Series A)
+- 34 term sheet clause chunks (Seed + Series A)
 - Hybrid semantic + keyword retrieval (OpenAI embeddings, precomputed and committed, blended with keyword-relevance scoring)
 - gpt-4o-mini generation
 - Vercel deployment
@@ -12,7 +12,7 @@
 - [ ] Add firm name and logo to header
 - [ ] Add Series B and Series C clauses
 - [ ] Add "Export playbook as PDF" button
-- [ ] Add clause browsing page (see all 33 clauses)
+- [ ] Add clause browsing page (see all 34 clauses)
 - [ ] Save query history in browser
 
 ---
@@ -62,4 +62,4 @@
 | 2.0 Multi-firm | $100 | Authentication + more storage |
 | 3.0 Client-facing | $300+ | Scale + compliance features |
 
-Note: if the clause database grows substantially beyond its current size (hundreds+ chunks), moving from committed JSON embeddings to a hosted vector database (e.g. Supabase pgvector) may become worth the added infra cost. At 33 chunks, in-memory cosine similarity is fast enough that this isn't currently needed.
+Note: if the clause database grows substantially beyond its current size (hundreds+ chunks), moving from committed JSON embeddings to a hosted vector database (e.g. Supabase pgvector) may become worth the added infra cost. At 34 chunks, in-memory cosine similarity is fast enough that this isn't currently needed.
