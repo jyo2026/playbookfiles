@@ -34,7 +34,7 @@ pages/index.tsx displays:
 
 ## Knowledge Base Structure (lib/clauseDatabase.ts)
 
-33 clause chunks covering Seed and Series A term sheet provisions. Each chunk:
+34 clause chunks covering Seed and Series A term sheet provisions. Each chunk:
 ```typescript
 {
   id: string              // unique ID e.g. 'lp-001'
